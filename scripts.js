@@ -150,11 +150,11 @@ function handleCipherClick() {
 }
 
 function getCipherImageData() {
-  return cipherCtx.getImageData(
+  return originalCtx.getImageData(
     0,
     0,
-    cipherCanvas.width,
-    cipherCanvas.height
+    originalCanvas.width,
+    originalCanvas.height
   );
 }
 
