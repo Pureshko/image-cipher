@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Cipher Tool</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="header">
+      <h1>Image Cipher Tool</h1>
+      <p>Upload an image, preview the original, then use canvas pixels for your cipher algorithm.</p>
+    </section>
+
+    <section class="panel">
+      <div class="controls-grid">
+        <div class="field">
+          <label for="verticalFunction">Vertical function</label>
+          <input
+            id="verticalFunction"
+            type="text"
+            placeholder="Example: y + 10 or custom formula"
+          />
+          <span class="hint">Use this value later inside your own vertical pixel logic.</span>
+        </div>
+
+        <div class="field">
+          <label for="horizontalFunction">Horizontal function</label>
+          <input
+            id="horizontalFunction"
+            type="text"
+            placeholder="Example: x + 10 or custom formula"
+          />
+          <span class="hint">Use this value later inside your own horizontal pixel logic.</span>
+        </div>
+
+        <div class="field">
+          <label for="imageInput">Upload image</label>
+          <input id="imageInput" type="file" accept="image/*" />
+          <span class="hint">Supported: PNG, JPG, WebP, GIF first frame.</span>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="cipherButton" class="btn-primary" disabled>Cipher</button>
+        <button id="resetButton" class="btn-secondary" disabled>Reset</button>
+      </div>
+
+      <div id="status" class="status">Upload an image to start.</div>
+    </section>
+
+    <section class="canvas-grid">
+      <div class="canvas-card">
+        <h2>Original Image</h2>
+        <p>This canvas shows the uploaded image without changes.</p>
+        <div class="canvas-wrapper">
+          <canvas id="originalCanvas"></canvas>
+        </div>
+      </div>
+
+      <div class="canvas-card">
+        <h2>Cipher Canvas</h2>
+        <p>This canvas is prepared for your encryption / pixel manipulation algorithm.</p>
+        <div class="canvas-wrapper">
+          <canvas id="cipherCanvas"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./scripts.js"></script>
+</body>
+</html>
